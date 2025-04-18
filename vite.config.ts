@@ -20,4 +20,5 @@ export default defineConfig({
     jsxFragment: 'Fragment',
     jsxInject: "import { h } from 'vue'",
   },
+  base: './', // Set base URL for GitHub Pages deployment
 })
