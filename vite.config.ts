@@ -6,9 +6,7 @@ import { presetUno, presetAttributify, presetIcons } from 'unocss'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      include: [/\.vue$/, /\.tsx$/], // Enable TSX
-    }),
+    vue(),
     UnoCSS({
       presets: [
         presetUno(),
@@ -17,4 +15,9 @@ export default defineConfig({
       ],
     }),
   ],
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
+    jsxInject: "import { h } from 'vue'",
+  },
 })
